@@ -12,4 +12,13 @@
 		<servlet-name>LoginHome</servlet-name>
 		<url-pattern>/loginHome</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SignUp</servlet-name>
+		<servlet-class>controllers.SignUpController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SignUp</servlet-name>
+		<url-pattern>/sign-up</url-pattern>
+	</servlet-mapping>
 </web-app>
