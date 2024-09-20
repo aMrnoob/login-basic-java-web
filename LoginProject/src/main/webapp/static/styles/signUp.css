@@ -101,7 +101,7 @@ hr {
 	padding: 5px 10px;
 }
 
-.infor span{
+.infor span, .account span{
 	display: block;
 	margin: -10px 0 10px 220px;
 	

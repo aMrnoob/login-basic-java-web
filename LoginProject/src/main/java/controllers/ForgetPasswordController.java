@@ -4,10 +4,12 @@ import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@WebServlet(urlPatterns = {"/forget-password"})
 public class ForgetPasswordController extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
@@ -15,7 +17,6 @@ public class ForgetPasswordController extends HttpServlet{
 	protected void doGet (HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, IOException {
 	    
-	    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/forgetPassword.jsp");
-	    dispatcher.forward(request, response);
+	    request.getRequestDispatcher("/WEB-INF/views/forgetPassword.jsp").forward(request, response);
 	}	
 }

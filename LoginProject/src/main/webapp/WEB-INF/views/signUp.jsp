@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>Sign Up</title>
 <link rel="stylesheet" type="text/css" href="static/styles/signUp.css">
-<link rel="icon" type="image/png" href="static/images/pic10.jpg">
 <script type="text/javascript" src="static/scripts/signUp.js"></script>
 </head>
 <body>
@@ -28,7 +27,7 @@
             </div>
 			<div class="infor">
                 <label class="phone-number"> Số điện thoại: </label> 
-                <input type="text" style="margin-left: 5px;" name="phone" placeholder="Nhập số điện thoại" class="phnumber-field" onblur="checkField('phone', this.value)" required /> 
+                <input type="text" style="margin-left: 5px;" name="phone" placeholder="Nhập số điện thoại" class="phnumber-field" required /> 
                 <span id="phone-error" style="color:red;"></span> 
             </div>
 			<div class="infor">
