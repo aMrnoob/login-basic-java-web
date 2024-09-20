@@ -21,4 +21,13 @@
 		<servlet-name>SignUp</servlet-name>
 		<url-pattern>/sign-up</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ForgetPassword</servlet-name>
+		<servlet-class>controllers.ForgetPasswordController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ForgetPassword</servlet-name>
+		<url-pattern>/forget-password</url-pattern>
+	</servlet-mapping>
 </web-app>
