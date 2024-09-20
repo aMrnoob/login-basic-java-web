@@ -6,14 +6,18 @@
 <meta charset="UTF-8">
 <title>Login</title>
 <link rel="stylesheet" type="text/css" href="static/styles/login.css">
+<link href="static/scripts/login.js">
 </head>
 <body>
 	<div class="loginBox">
-		<a class="sign-in-here" href="http://localhost:8080/LoginProject/loginHome">Sign in here</a>
-		<form action="role" method="post">
+		<a class="sign-in-here" href="http://localhost:8080/LoginProject/login">Sign in here</a>
+		<form method="post">
 			<div class="inputBox">
-				<input id="uname" type="text" name="Username" placeholder="Username">
-				<input id="pass" type="password" name="Password" placeholder="Password">
+				<input id="uname" type="text" name="username" placeholder="Username" required/>
+				<input id="pass" type="password" name="password" placeholder="Password" required/>
+				<c:if test="${not empty errorMessage}">
+            		<div class="error">${errorMessage}</div>
+    			</c:if>
 			</div>
 			<input type="submit" name="" value="Login">
 		</form>

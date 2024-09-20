@@ -10,6 +10,11 @@ public class User {
 	private String phone;
 	private String address;
 	
+	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public User(String userID, String username, String password, String fullName, String email, String phone, String address) {
 		// TODO Auto-generated constructor stub
 		this.userID = userID;

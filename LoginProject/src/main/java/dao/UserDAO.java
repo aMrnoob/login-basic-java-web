@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import models.User;
+
 public class UserDAO {
 	
 	public void addUser(String fullName, String email, String numberPhone, String address, String accountName, String password) throws SQLException {
@@ -60,5 +62,32 @@ public class UserDAO {
 	        e.printStackTrace();
 	    }
 	    return false;
+	}
+	
+	public User getInforUser(String username)
+	{
+		String sql = "SELECT userID, fullName, email, phone, address, username, password FROM [dbo].[user] WHERE username = ?";
+	    User user = null;
+
+	    try (Connection connection = connectDB.getConnection();
+	         PreparedStatement statement = connection.prepareStatement(sql)) {
+	        statement.setString(1, username);
+	        ResultSet resultSet = statement.executeQuery();
+
+	        if (resultSet.next()) {
+	            String userID = resultSet.getString("userID");
+	            String fullName = resultSet.getString("fullName");
+	            String email = resultSet.getString("email");
+	            String phone = resultSet.getString("phone");
+	            String address = resultSet.getString("address");
+	            String userName = resultSet.getString("username");
+	            String password = resultSet.getString("password");
+
+	            user = new User(userID, userName, password, fullName, email, phone, address);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    return user;
 	}
 }

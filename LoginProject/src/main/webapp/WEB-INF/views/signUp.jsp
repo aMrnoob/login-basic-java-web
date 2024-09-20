@@ -42,7 +42,7 @@
             </div>
 			<div class="account">
 				<label class="pw"> Mật khẩu: </label> 
-				<input type="text" style="margin-left: 46px;" name="pw" placeholder="Nhập mật khẩu" class="pw-field" required /> 
+				<input type="password" style="margin-left: 46px;" name="pw" placeholder="Nhập mật khẩu" class="pw-field" required /> 
 			</div>	
 			<button type="submit" class="submit">Xác nhận</button>
 		</div>
