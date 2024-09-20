@@ -32,6 +32,30 @@ public class UserDAO {
         }
     }
 	
+	public void updateUser(String email, String password) throws SQLException
+	{
+		 String sql = "UPDATE [dbo].[user] SET password = ? WHERE email = ?";
+
+		    try (Connection connection = connectDB.getConnection();
+		         PreparedStatement statement = connection.prepareStatement(sql)) {
+
+		        statement.setString(1, password); 
+		        statement.setString(2, email);  
+
+		        int rowsUpdated = statement.executeUpdate();
+
+		        if (rowsUpdated > 0) {
+		            System.out.println("Cập nhật mật khẩu thành công.");
+		        } else {
+		            throw new SQLException("Không tìm thấy người dùng với email: " + email);
+		        }
+
+		    } catch (SQLException e) {
+		        e.printStackTrace();
+		        throw new SQLException("Error! Unable to update user password.");
+		    }
+	}
+	
 	public int countUsers() {
 	    int count = 0;
 	    String sql = "SELECT COUNT(*) FROM [dbo].[user]";

@@ -38,7 +38,6 @@ public class SignUpController extends HttpServlet{
         try {
 			userDAO.addUser(fullName, email, phone, address, username, password);
 			request.getRequestDispatcher("/WEB-INF/views/signUpSuccess.jsp").forward(request, response);
-			response.sendRedirect("signUpSuccess.jsp");
 		} catch (SQLException e) {
 
 			e.printStackTrace();
